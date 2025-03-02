@@ -8,9 +8,18 @@ import { TopMenuComponent } from './header/top-menu/top-menu.component';
 import { MaiMenuComponent } from './header/mai-menu/mai-menu.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchComponent } from './product-list/search/search.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TopHeaderComponent, TopMenuComponent, MaiMenuComponent, ProductListComponent, SearchComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TopHeaderComponent,
+    TopMenuComponent,
+    MaiMenuComponent,
+    ProductListComponent,
+    SearchComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
