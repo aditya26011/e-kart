@@ -18,8 +18,14 @@
   <span>{{ addToCart }}</span>
   <button (click)="incrementCartValue()">+</button> -->
   <app-search (SearchTextChanged)="onSearchTextChanged($event)"> </app-search>
-  <app-product-list [searchText]="searchText"></app-product-list>
+  <app-product-list
+    [searchText]="searchText"
+    #productListComponent
+  ></app-product-list>
   <!-- <div *ngFor="let item of stringOfList">
     <p>current element is:{{ item }}</p>
   </div> -->
+  <app-product-detail
+    *ngIf="productListComponent.selectedProduct"
+  ></app-product-detail>
 </div>
