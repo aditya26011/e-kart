@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ContainerComponent {
   stringOfList: string[] = ['Mark', 'hanry', 'steve', 'clive'];
+
+  searchText: string = '';
+  onSearchTextChanged(value: string) {
+    this.searchText = value;
+  }
 }
