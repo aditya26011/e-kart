@@ -29,4 +29,55 @@
     *ngIf="productListComponent.selectedProduct"
     [productListComp]="productListComponent"
   ></app-product-detail>
+
+  <!-- <img [src]="product.pImage" alt="Iphone" />
+  <p>Name:{{ product.name }}</p>
+  <p>Price: {{ "$" + product.price }}</p>
+  <p>Color:{{ product.color }}</p>
+  <p>
+    Discounted Price:
+    {{ getDiscountedPrice().toFixed(2) }}
+  </p>
+  <p>
+    {{
+      product.inStock > 0
+        ? "Only  " + product.inStock + " left"
+        : "Not in Stock"
+    }}
+  </p>
+  <button (click)="decrementCartValue()">-</button>
+  <span>{{ addToCart }}</span>
+  <button (click)="incrementCartValue()">+</button> -->
+  <app-search (SearchTextChanged)="onSearchTextChanged($event)"> </app-search>
+  <app-product-list
+    [searchText]="searchText"
+    #productListComponent
+  ></app-product-list>
+  <!-- <div *ngFor="let item of stringOfList">
+    <p>current element is:{{ item }}</p>
+  </div> -->
+  <app-product-detail
+    *ngIf="productListComponent.selectedProduct"
+    [productListComp]="productListComponent"
+  ></app-product-detail>
+
+  <div class="ekart-featured-products">
+    <div class="ekart-featured-product-heading">
+      <h1>Latest Arrivals in Popular Brands</h1>
+    </div>
+    <app-feature-brands>
+      <h2 class="title">New Arrivals in Nike</h2>
+      <button class="call-to-action">Show new Arrivals in Nike</button>
+    </app-feature-brands>
+
+    <app-feature-brands>
+      <h2 class="title">New Arrivals in Addidas</h2>
+      <button class="call-to-action">Show new Arrivals in Addidas</button>
+    </app-feature-brands>
+
+    <app-feature-brands>
+      <h2 class="title">New Arrivals in Rebook</h2>
+      <button class="call-to-action">Show new Arrivals in Rebook</button>
+    </app-feature-brands>
+  </div>
 </div>
